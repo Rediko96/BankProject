@@ -1,16 +1,20 @@
-﻿namespace BankProject
+﻿using System.Collections.Generic;
+namespace BankProject
 {
     abstract class Account
     {
-        public string AccountNumber;
-        public decimal Balance;
-        public string FirstName;
-        public string LastName;
-        public long Pesel;
+        public int Id { get; }
+        public string AccountNumber { get; }
+        public decimal Balance { get; }
+        public string FirstName { get; }
+        public string LastName { get; }
+        public long Pesel { get; }
 
-        public Account(string accountNumber, decimal balance, string firstName, string lastName, long pesel)
+
+        public Account(int id, decimal balance, string firstName, string lastName, long pesel)
         {
-            AccountNumber = accountNumber;
+            Id = id;
+            AccountNumber = generateAccountNumber(id);
             Balance = balance;
             FirstName = firstName;
             LastName = lastName;
@@ -29,5 +33,22 @@
         {
             return string.Format("{0}zł", Balance);
         }
+
+        private string generateAccountNumber(int id)
+        {
+            var accountNumber = string.Format("94{0:D10}", id);
+
+            return accountNumber;
+        }
+    }
+
+    class AccountsManager
+    {
+        private IList<Account> _accounts;
+        public AccountsManager()
+        {
+            _accounts = new List<Account>();
+        }
+
     }
 }

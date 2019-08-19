@@ -11,32 +11,23 @@ namespace BankProject
         static void Main(string[] args)
         {
 
-            Account account;
+            List<Account> accounts = new List<Account>();
 
-
-
-            account = new SavingAccounts("940000000001", 0.0M, "Marek", "Zając", 92010133333);
-            account = new SavingAccounts("940000000002", 0.0M, "Marek", "Zając", 92010133333);
-
-            //string fullName = account.getFullName();
-            // Console.WriteLine("Pierwsze konto w systemie dostał(-a): {0}", fullName);
-
-            // string fullBalance = savingsAccount.getBalance();
-            // Console.WriteLine("Twoja wartość konta wynosi: {0}", fullBalance);
-
-
-
-            //BillingAcounts billingsAccount = new BillingAcounts(savingsAccount.AccountNumber, savingsAccount.Balance, savingsAccount.FirstName, savingsAccount.LastName,
-            //savingsAccount.Pesel);
-
+            accounts.Add(new SavingAccounts(1,12.9M, "Marek", "Zajac", 1234567890));
+            accounts.Add(new SavingAccounts(2,30M, "Marek", "Aaaa", 1234554321));
+            accounts.Add(new SavingAccounts(3,4M, "Zzzz", "Bbb", 0987654321));
+            accounts.Add(new BillingAcounts(4,13.9M, "Marek", "Zajac", 1234567890));
+            accounts.Add(new BillingAcounts(5,0.0M, "Marek", "Aaaa", 1234554321));
 
             Printer printer = new Printer();
 
-            printer.Print(account);
-            printer.Print(account);
-            //printer.Print(billingsAccount);
+            foreach(Account element in accounts)
+            {
+                printer.Print(element);
+            }
 
             Console.ReadKey();
+
 
         }
 

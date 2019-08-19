@@ -9,9 +9,9 @@ namespace BankProject
     class SavingAccounts : Account
     {
 
-        public SavingAccounts(string accountNumber,
+        public SavingAccounts(int id,
             decimal balance, string firstName, string lastName, long pesel)
-            : base(accountNumber, balance, firstName, lastName, pesel)
+            : base(id, balance, firstName, lastName, pesel)
         {
 
         }

@@ -10,9 +10,9 @@ namespace BankProject
     {
 
 
-        public BillingAcounts(string accountNumber,
+        public BillingAcounts(int id,
             decimal balance, string firstName, string lastName, long pesel)
-            : base(accountNumber, balance, firstName, lastName, pesel)
+            : base(id, balance, firstName, lastName, pesel)
         {
 
 
