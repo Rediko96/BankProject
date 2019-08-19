@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace BankProject
 {
-    class BillingAccounts
+    class BillingAcounts : Account
     {
+
+
+        public BillingAcounts(string accountNumber,
+            decimal balance, string firstName, string lastName, long pesel)
+            : base(accountNumber, balance, firstName, lastName, pesel)
+        {
+
+
+        }
+        public override string TypeName()
+        {
+            return "ROZLIECZNIOWE";
+        }
     }
 }

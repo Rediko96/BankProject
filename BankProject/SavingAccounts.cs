@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace BankProject
 {
-    class SavingAccounts
+    class SavingAccounts : Account
     {
+
+        public SavingAccounts(string accountNumber,
+            decimal balance, string firstName, string lastName, long pesel)
+            : base(accountNumber, balance, firstName, lastName, pesel)
+        {
+
+        }
+        public override string TypeName()
+        {
+            return "OSZCZĘDNOŚCIOWE";
+        }
+
     }
 }
